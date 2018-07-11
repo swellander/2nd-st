@@ -9,10 +9,17 @@
     <div>
       <h3>Movie List:</h3>
       <ul>
-        <li>Ocean's Eleven</li>
-        <li>My Big Fat Greek Wedding</li>
-        <li>DeadPool</li>
+      <% db.forEach(movie => { %>
+        <li><%= movie.title %></li>
+      <% }) %>
       </ul>
+
+      <hr>
+      <h3>Add A Movie</h3>
+      <form method="POST" action="/">
+        <input type="text" name="title">
+        <button type="submit">Submit</button>
+      </form>
     </div>
   </body>
 </html>
