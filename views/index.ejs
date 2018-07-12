@@ -1,7 +1,12 @@
 <html>
   <head>
     <title>Movie Night</title>
-
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous">
+    </script>
+    <script src="assets/movieNight.js"></script>
   </head>
   <body>
     <h1>Movie Night!</h1>
@@ -10,16 +15,14 @@
       <h3>Movie List:</h3>
       <ul>
       <% db.forEach(movie => { %>
-        <li><%= movie.title %></li>
+        <li><%= movie.title %> <button id="<%= movie.id %>">remove</button></li>
       <% }) %>
       </ul>
 
       <hr>
       <h3>Add A Movie</h3>
-      <form method="POST" action="/">
-        <input type="text" name="title">
-        <button type="submit">Submit</button>
-      </form>
+        <input id="movie-title-input"type="text" name="title">
+        <button id="movie-submit">Submit</button>
     </div>
   </body>
 </html>
